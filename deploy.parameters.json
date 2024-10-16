@@ -3,25 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "appServicePlanName": {
-        "value": "myAppServicePlan"
+        "value": "ROELLGU1myAppServicePlan"
       },
       "webAppName": {
-        "value": "MyMvcApp"
-      },
-      "sqlServerName": {
-        "value": "mySqlServer"
-      },
-      "sqlDatabaseName": {
-        "value": "myDatabase"
-      },
-      "sqlAdminUsername": {
-        "value": "myAdmin"
-      },
-      "sqlAdminPassword": {
-        "value": "myPassword"
+        "value": "ROELLGU1MyMvcApp"
       },
       "location": {
-        "value": "eastus"
+        "value": "westeurope"
       }
     }
   }
