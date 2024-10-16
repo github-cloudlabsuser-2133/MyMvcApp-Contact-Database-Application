@@ -8,16 +8,24 @@ namespace MyMvcApp.Controllers
 {
     public class UserController : Controller
     {
-        private static IList<User> userList = new List<User>
+        public IList<User> userList = new List<User>
         {
             new User { Id = 1, Name = "John Doe", Email = "john@example.com" },
             new User { Id = 2, Name = "Jane Smith", Email = "jane@example.com" }
         };
 
         // GET: User
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(userList);
+            var users = from u in userList
+                        select u;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                users = users.Where(u => u.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase));
+            }
+
+            return View(users.ToList());
         }
 
         // GET: User/Details/5
